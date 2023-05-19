@@ -1,9 +1,17 @@
-name: Extract data from Sportmonks and load it into BigQuery
+name: ETL
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      endpoint:
+        required: true
+        type: string
+      filter:
+        required: true
+        type: string
+      table:
+        required: true
+        type: string
 
 permissions:
   contents: read
