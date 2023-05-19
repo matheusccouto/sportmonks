@@ -1,0 +1,22 @@
+name: Extract data from Sportmonks and load it into BigQuery
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  auth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: google-github-actions/auth@v1
+        with:
+          workload_identity_provider: projects/186311645957/locations/global/workloadIdentityPools/github/providers/github
+          service_account: github@sportmonks-data.iam.gserviceaccount.com
+      - uses: google-github-actions/setup-gcloud@v1
+      - run: gcloud info
