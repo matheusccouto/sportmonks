@@ -32,8 +32,7 @@ jobs:
 
       - name: Extract from API and load to Google Cloud Storage
         run: |
-          curl -s https://api.sportmonks.com/v3/${{ inputs.endpoint }}?\
-            api_token=${{ secrets.SPORTMONKS_API_TOKEN }} | \
+          curl -s https://api.sportmonks.com/v3/${{ inputs.endpoint }}?api_token=${{ secrets.SPORTMONKS_API_TOKEN }} | \
             jq ${{ inputs.filter }} | \
             jq -c '.[]' > \
             data.json
