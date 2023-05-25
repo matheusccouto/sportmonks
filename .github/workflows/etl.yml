@@ -32,15 +32,8 @@ jobs:
 
       - name: Extract from API and load to Google Cloud Storage
         run: |
-          # Get current season and round
-          STATUS=$(curl -s https://api.cartola.globo.com/mercado/status)
-          SEASON=$(echo $STATUS | jq -r '.temporada')
-          ROUND=$(echo $STATUS | jq -r '.rodada_atual')
-          BASENAME=$(echo $SEASON-$(printf %02d $ROUND))
-
-          # Download and filter data
           curl -s https://api.sportmonks.com/v3/${{ inputs.endpoint }}?\
-            api_token=${{ SPORTMONKS_API_TOKEN }} | \
+            api_token=${{ secrets.SPORTMONKS_API_TOKEN }} | \
             jq ${{ inputs.filter }} | \
             jq -c '.[]' > \
             data.json
