@@ -16,5 +16,4 @@ jobs:
     uses: ./.github/workflows/etl.yml
     with:
       endpoint: football/predictions/probabilities
-      filter: .data
       table: probabilities
