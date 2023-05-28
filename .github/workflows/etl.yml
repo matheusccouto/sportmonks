@@ -6,9 +6,6 @@ on:
       endpoint:
         required: true
         type: string
-      filter:
-        required: true
-        type: string
       table:
         required: true
         type: string
@@ -30,9 +27,10 @@ jobs:
 
       - uses: google-github-actions/setup-gcloud@v1
 
-      - name: Extract from API and load to Google Cloud Storage
-        run: |
-          curl -s https://api.sportmonks.com/v3/${{ inputs.endpoint }}?api_token=${{ secrets.SPORTMONKS_API_TOKEN }} | \
-            jq ${{ inputs.filter }} | \
-            jq -c '.[]' > \
-            data.json
+      - name: Extract from API
+        run: ./extract.sh
+        env:
+          ENDPOINT: ${{ inputs.endpoint }}
+      
+      - name: Load to Google Cloud Storage
+        run: gcloud storage cp *.json gs://cartola/${{ inputs.endpoint }}/${{ inputs.table }}
