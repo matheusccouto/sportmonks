@@ -31,6 +31,7 @@ jobs:
         run: ./extract.sh
         env:
           ENDPOINT: ${{ inputs.endpoint }}
+          SPORTMONKS_API_TOKEN: ${{ secrets.SPORTMONKS_API_TOKEN }}
       
       - name: Load to Google Cloud Storage
         run: gcloud storage cp *.json gs://cartola/${{ inputs.endpoint }}/${{ inputs.table }}
