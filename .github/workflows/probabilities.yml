@@ -17,3 +17,4 @@ jobs:
     with:
       endpoint: football/predictions/probabilities
       table: probabilities
+    secrets: inherit
