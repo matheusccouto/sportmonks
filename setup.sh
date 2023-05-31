@@ -37,8 +37,8 @@ BUCKET_LOCATION="us"
 DATASET_ID="sportmonks"
 
 
-echo Log in using browser.
-gcloud auth login
+# echo Log in using browser.
+# gcloud auth login
 
 echo Create a Google Cloud Service Account.
 gcloud iam service-accounts create "${SERVICE_ACCOUNT}" \
