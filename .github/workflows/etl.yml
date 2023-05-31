@@ -34,4 +34,4 @@ jobs:
           SPORTMONKS_API_TOKEN: ${{ secrets.SPORTMONKS_API_TOKEN }}
       
       - name: Load to Google Cloud Storage
-        run: gcloud storage cp *.json gs://sportmonks-data/${{ inputs.endpoint }}/${{ inputs.table }}
+        run: gcloud storage cp data/*.json gs://sportmonks-data/${{ inputs.endpoint }}/${{ inputs.table }}

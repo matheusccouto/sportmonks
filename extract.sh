@@ -1,6 +1,7 @@
 #!/bin/bash
 
 url="https://api.sportmonks.com/v3/$ENDPOINT?per_page=50"
+mkdir data
 
 while true; do
 
@@ -20,9 +21,7 @@ while true; do
   echo Page $page
 
   # Extract data from the response using jq and persist it
-  echo $response | jq -r '.data[]' > $page.json
-
-  exit 0  # FIXME
+  echo $response | jq -r '.data[]' > data/$page.json
 
   # Check if there is a next page
   url=$(echo $response | jq -r '.pagination.next_page')
