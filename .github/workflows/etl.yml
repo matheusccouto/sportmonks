@@ -35,3 +35,12 @@ jobs:
       
       - name: Load to Google Cloud Storage
         run: gcloud storage cp data/*.json gs://sportmonks-data/${{ inputs.endpoint }}/${{ inputs.table }}
+
+      - name: Load to Google BigQuery from Google Cloud Storage
+        run: |
+          bq load \
+            --autodetect \
+            --source_format=NEWLINE_DELIMITED_JSON \
+            --replace \
+            sportmonks.${{ inputs.table }} \
+            gs://sportmonks-data/${{ inputs.endpoint }}/${{ inputs.table }}/*.json
