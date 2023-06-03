@@ -39,7 +39,7 @@ jobs:
       - name: Load to Google BigQuery from Google Cloud Storage
         run: |
           bq load \
-            --autodetect \
+            --noautodetect \
             --source_format=NEWLINE_DELIMITED_JSON \
             --replace \
             sportmonks.${{ inputs.table }} \
