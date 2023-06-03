@@ -95,8 +95,12 @@ bq --project_id="${PROJECT_ID}" \
   mk --dataset \
   "${PROJECT_ID}:${DATASET_ID}"
 
-echo Grant access to the service account to create tables and jobs in the BigQuery dataset
+echo Grant access to the service account to create tables BigQuery dataset
 gcloud projects add-iam-policy-binding ${PROJECT_ID} \
   --member="serviceAccount:${SERVICE_ACCOUNT}@${PROJECT_ID}.iam.gserviceaccount.com" \
-  --role="roles/bigquery.dataEditor" \
+  --role="roles/bigquery.dataEditor"
+
+echo Grant access to the service account to create jobs BigQuery dataset
+gcloud projects add-iam-policy-binding ${PROJECT_ID} \
+  --member="serviceAccount:${SERVICE_ACCOUNT}@${PROJECT_ID}.iam.gserviceaccount.com" \
   --role="roles/bigquery.jobUser"
