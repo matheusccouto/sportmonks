@@ -21,7 +21,7 @@ while true; do
   echo Page $page
 
   # Extract data from the response using jq and persist it
-  echo $response | jq -cr '.data[]' > data/$page.json
+  echo $response | jq -cr '.data[]' >> data/data.json
 
   # Check if there is a next page
   url=$(echo $response | jq -r '.pagination.next_page')

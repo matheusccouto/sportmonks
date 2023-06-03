@@ -34,7 +34,7 @@ jobs:
           SPORTMONKS_API_TOKEN: ${{ secrets.SPORTMONKS_API_TOKEN }}
       
       - name: Load to Google Cloud Storage
-        run: gcloud storage cp data/*.json gs://sportmonks-data/${{ inputs.endpoint }}/${{ inputs.table }}
+        run: gcloud storage cp data/*.json gs://sportmonks-data/${{ inputs.endpoint }}
 
       - name: Load to Google BigQuery from Google Cloud Storage
         run: |
@@ -43,4 +43,4 @@ jobs:
             --source_format=NEWLINE_DELIMITED_JSON \
             --replace \
             sportmonks.${{ inputs.table }} \
-            gs://sportmonks-data/${{ inputs.endpoint }}/${{ inputs.table }}/*.json
+            gs://sportmonks-data/${{ inputs.endpoint }}/data.json
