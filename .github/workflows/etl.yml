@@ -9,6 +9,10 @@ on:
       table:
         required: true
         type: string
+      schema:
+        required: true
+        type: string
+
 
 permissions:
   contents: read
@@ -39,8 +43,8 @@ jobs:
       - name: Load to Google BigQuery from Google Cloud Storage
         run: |
           bq load \
-            --noautodetect \
             --source_format=NEWLINE_DELIMITED_JSON \
             --replace \
+            --schema ${{ inputs.schema }} \
             sportmonks.${{ inputs.table }} \
             gs://sportmonks-data/${{ inputs.endpoint }}/data.json

@@ -17,4 +17,5 @@ jobs:
     with:
       endpoint: football/predictions/probabilities
       table: probabilities
+      schema: probabilities.json
     secrets: inherit
