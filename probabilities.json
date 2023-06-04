@@ -1,11 +1,66 @@
 [
     {
+        "name": "id",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "fixture_id",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "type_id",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
         "name": "predictions",
         "type": "RECORD",
         "mode": "NULLABLE",
         "fields": [
             {
-                "name": "draw_away",
+                "name": "home",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "draw",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "away",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "yes",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "no",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "equal",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "home_home",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "home_draw",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "home_away",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
             },
@@ -15,7 +70,17 @@
                 "mode": "NULLABLE"
             },
             {
+                "name": "draw_away",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
                 "name": "draw_draw",
+                "type": "FLOAT",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "away_home",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
             },
@@ -25,7 +90,7 @@
                 "mode": "NULLABLE"
             },
             {
-                "name": "home_away",
+                "name": "away_away",
                 "type": "FLOAT",
                 "mode": "NULLABLE"
             },
@@ -897,70 +962,872 @@
                 ]
             },
             {
-                "name": "yes",
-                "type": "FLOAT",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "away_home",
-                "type": "FLOAT",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "away_away",
-                "type": "FLOAT",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "home_home",
-                "type": "FLOAT",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "draw",
-                "type": "FLOAT",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "away",
-                "type": "FLOAT",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "equal",
-                "type": "FLOAT",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "home_draw",
-                "type": "FLOAT",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "home",
-                "type": "FLOAT",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "no",
-                "type": "FLOAT",
-                "mode": "NULLABLE"
+                "name": "score",
+                "type": "RECORD",
+                "mode": "NULLABLE",
+                "fields": [
+                    {
+                        "name": "0_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "0_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "1_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "2_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "3_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "4_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "5_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "6_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "7_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "8_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "9_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "10_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "11_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_0",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_3",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_4",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_5",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_6",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_7",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_8",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_9",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_10",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_11",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "12_12",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "other_1",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "other_x",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "other_2",
+                        "type": "FLOAT",
+                        "mode": "NULLABLE"
+                    }
+                ]
             }
         ]
-    },
-    {
-        "name": "fixture_id",
-        "type": "INTEGER",
-        "mode": "NULLABLE"
-    },
-    {
-        "name": "type_id",
-        "type": "INTEGER",
-        "mode": "NULLABLE"
-    },
-    {
-        "name": "id",
-        "type": "INTEGER",
-        "mode": "NULLABLE"
     }
 ]
