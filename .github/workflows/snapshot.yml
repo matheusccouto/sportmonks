@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      - run: pip install -r dbt-bigquery==1.5.*
+      - run: pip install dbt-bigquery==1.5.*
 
       - run: dbt snapshot --select ${{ inputs.table }}
         working-directory: dbt
