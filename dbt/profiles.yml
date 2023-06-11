@@ -1,0 +1,10 @@
+sportmonks:
+  outputs:
+    default:
+      type: bigquery
+      method: oauth
+      project: matheusccouto
+      dataset: sportmonks
+      location: US
+      threads: 1
+  target: default

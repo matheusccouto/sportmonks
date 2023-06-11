@@ -12,10 +12,16 @@ permissions:
   id-token: write
 
 jobs:
-  atletas:
+  etl:
     uses: ./.github/workflows/etl.yml
     with:
       endpoint: football/predictions/probabilities
       table: probabilities
       schema: probabilities.json
     secrets: inherit
+
+  snapshot:
+    uses: ./.github/workflows/snapshot.yml
+    needs: etl
+    with:
+      table: probabilities

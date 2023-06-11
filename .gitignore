@@ -1,4 +1,11 @@
-data*.json
+data.json
+
+# dbt
+target/
+dbt_packages/
+logs/
+.user.yml
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
