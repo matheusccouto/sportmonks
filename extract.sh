@@ -1,6 +1,6 @@
 #!/bin/bash
 
-url="https://api.sportmonks.com/v3/$ENDPOINT?per_page=50"
+url="https://api.sportmonks.com/v3/$ENDPOINT?per_page=50&include=fixture;type"
 
 while true; do
 
