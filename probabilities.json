@@ -1829,5 +1829,144 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "fixture",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+            {
+                "name": "has_odds",
+                "type": "BOOLEAN",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "placeholder",
+                "type": "BOOLEAN",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "leg",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "starting_at",
+                "type": "TIMESTAMP",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "state_id",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "name",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "round_id",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "id",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "aggregate_id",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "stage_id",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "details",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "venue_id",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "sport_id",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "starting_at_timestamp",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "length",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "result_info",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "season_id",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "league_id",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "group_id",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            }
+        ]
+    },
+    {
+        "name": "type",
+        "type": "RECORD",
+        "mode": "NULLABLE",
+        "fields": [
+            {
+                "name": "developer_name",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "stat_group",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "code",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "model_type",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "name",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "id",
+                "type": "INTEGER",
+                "mode": "NULLABLE"
+            }
+        ]
     }
 ]
