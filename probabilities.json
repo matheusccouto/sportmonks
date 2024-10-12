@@ -1929,6 +1929,11 @@
                 "name": "group_id",
                 "type": "STRING",
                 "mode": "NULLABLE"
+            },
+            {
+                "name": "has_premium_odds",
+                "type": "BOOLEAN",
+                "mode": "NULLABLE"
             }
         ]
     },
